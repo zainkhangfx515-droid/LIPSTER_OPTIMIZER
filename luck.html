@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUCK — LIPSTER Lucky Spin</title>
+    <meta name="description" content="LIPSTER Lucky Spin — 10 Free Premium Access out of 1000 users.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/luck.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-particles" id="particles"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="assets/images/logo.jpg" alt="LIPSTER" class="nav-logo-img" onerror="this.outerHTML='<span style=&quot;font-size:24px&quot;>👻</span>'">
+            <span class="logo-text">LIPSTER</span>
+            <span class="logo-dot"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="luck.html" class="active">LUCK</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#support">Support</a></li>
+        </ul>
+        <a href="index.html#download" class="nav-cta">Get Premium</a>
+        
+        <div class="nav-socials">
+            <a href="https://youtube.com/@lipsterofficial?si=Jq3Kdn8gKdqWGe2s" 
+               class="nav-social" target="_blank" title="YouTube">
+                <img src="assets/images/youtube.png" alt="YouTube" class="nav-social-icon">
+            </a>
+            <a href="https://discord.gg/r49ckHeTDJ" 
+               class="nav-social" target="_blank" title="Discord">
+                <img src="assets/images/discord.png" alt="Discord" class="nav-social-icon">
+            </a>
+            <a href="mailto:zainkhan240fps@gmail.com" 
+               class="nav-social" title="Email">
+                <img src="assets/images/gmail.png" alt="Email" class="nav-social-icon">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Lucky Spin Section -->
+    <section class="luck-section">
+        
+        <!-- Header -->
+        <div class="luck-header">
+            <div class="luck-badge">
+                <span class="badge-dot"></span>
+                <span>LIMITED EVENT</span>
+            </div>
+            <h1 class="luck-title">LUCKY SPIN</h1>
+            <p class="luck-subtitle">Win LIPSTER PRO for FREE!</p>
+            <p class="luck-desc">
+                Only <strong>10 lucky winners</strong> out of <strong>1000 users</strong>.<br>
+                Every user gets <strong>3 spins</strong>. Good luck! 🍀
+            </p>
+        </div>
+
+        <!-- Remaining Counter -->
+        <div class="remaining-counter">
+            <span class="counter-icon">🏆</span>
+            <span class="counter-text">Winners Remaining:</span>
+            <span class="counter-number" id="remainingWinners">10</span>
+            <span class="counter-text">/ 10</span>
+        </div>
+
+        <!-- Spins Info -->
+        <div class="spins-info">
+            <div class="spin-item">
+                <span class="spin-label">Your Spins:</span>
+                <span class="spin-count" id="spinsRemaining">3</span>
+                <span class="spin-total">/ 3</span>
+            </div>
+        </div>
+
+        <!-- Wheel Container -->
+        <div class="wheel-container">
+            
+            <!-- Pointer -->
+            <div class="wheel-pointer">
+                <div class="pointer-triangle"></div>
+            </div>
+            
+            <!-- Wheel -->
+            <div class="wheel-wrapper">
+                <svg class="wheel-svg" viewBox="0 0 500 500" id="wheelSvg">
+                    <g id="wheelGroup">
+                        
+                        <!-- Segment 0 — LIPSTER PRO (Winner) -->
+                        <path d="M 250 250 L 250 20 A 230 230 0 0 1 412.7 87.3 Z" 
+                              fill="url(#goldGrad)" stroke="#fff" stroke-width="3"/>
+                        <image href="assets/images/lipster-lite.png" 
+                               x="300" y="65" 
+                               width="75" height="75"
+                               transform="rotate(22.5 337 102)"
+                               preserveAspectRatio="xMidYMid meet"/>
+                        
+                        
+                        <!-- Segment 1 — TRY AGAIN -->
+                        <path d="M 250 250 L 412.7 87.3 A 230 230 0 0 1 480 250 Z" 
+                              fill="#1a1a2e" stroke="#fff" stroke-width="3"/>
+                        <text x="410" y="195" font-size="52" text-anchor="middle"
+                              transform="rotate(67.5 410 195)">😢</text>
+                        
+                        
+                        <!-- Segment 2 — BETTER LUCK -->
+                        <path d="M 250 250 L 480 250 A 230 230 0 0 1 412.7 412.7 Z" 
+                              fill="url(#redGrad)" stroke="#fff" stroke-width="3"/>
+                        <text x="410" y="335" font-size="52" text-anchor="middle"
+                              transform="rotate(112.5 410 335)">😔</text>
+                        
+                        
+                        <!-- Segment 3 — TRY AGAIN -->
+                        <path d="M 250 250 L 412.7 412.7 A 230 230 0 0 1 250 480 Z" 
+                              fill="#1a1a2e" stroke="#fff" stroke-width="3"/>
+                        <text x="320" y="410" font-size="52" text-anchor="middle"
+                              transform="rotate(157.5 320 410)">😞</text>
+                        
+                        
+                        <!-- Segment 4 — BONUS -->
+                        <path d="M 250 250 L 250 480 A 230 230 0 0 1 87.3 412.7 Z" 
+                              fill="url(#cyanGrad)" stroke="#fff" stroke-width="3"/>
+                        <text x="170" y="410" font-size="52" text-anchor="middle"
+                              transform="rotate(202.5 170 410)">🎁</text>
+                        
+                        
+                        <!-- Segment 5 — TRY AGAIN -->
+                        <path d="M 250 250 L 87.3 412.7 A 230 230 0 0 1 20 250 Z" 
+                              fill="#1a1a2e" stroke="#fff" stroke-width="3"/>
+                        <text x="100" y="335" font-size="52" text-anchor="middle"
+                              transform="rotate(247.5 100 335)">😕</text>
+                        
+                        
+                        <!-- Segment 6 — ALMOST -->
+                        <path d="M 250 250 L 20 250 A 230 230 0 0 1 87.3 87.3 Z" 
+                              fill="url(#orangeGrad)" stroke="#fff" stroke-width="3"/>
+                        <text x="100" y="195" font-size="52" text-anchor="middle"
+                              transform="rotate(292.5 100 195)">😮</text>
+                        
+                        
+                        <!-- Segment 7 — TRY AGAIN -->
+                        <path d="M 250 250 L 87.3 87.3 A 230 230 0 0 1 250 20 Z" 
+                              fill="#1a1a2e" stroke="#fff" stroke-width="3"/>
+                        <text x="170" y="95" font-size="52" text-anchor="middle"
+                              transform="rotate(337.5 170 95)">😩</text>
+                        
+                    </g>
+                    
+                    <!-- Gradients -->
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffd700"/>
+                            <stop offset="100%" stop-color="#ff8c00"/>
+                        </linearGradient>
+                        <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ff5555"/>
+                            <stop offset="100%" stop-color="#cc0000"/>
+                        </linearGradient>
+                        <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00ffff"/>
+                            <stop offset="100%" stop-color="#0088aa"/>
+                        </linearGradient>
+                        <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffaa00"/>
+                            <stop offset="100%" stop-color="#cc8800"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                
+                <!-- Center Button -->
+                <button class="spin-btn" id="spinBtn" onclick="spinWheel()">
+                    <span class="spin-btn-text">SPIN</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Result Modal -->
+        <div class="result-modal" id="resultModal">
+            <div class="result-content" id="resultContent">
+                <div class="result-icon" id="resultIcon">🎉</div>
+                <h2 class="result-title" id="resultTitle">CONGRATULATIONS!</h2>
+                <p class="result-text" id="resultText">You won LIPSTER PRO!</p>
+                
+                <div class="result-buttons" id="resultButtons">
+                    <a href="#" class="btn btn-primary btn-download" id="downloadBtn" target="_blank" style="display: none;">
+                        <span>⬇️ Download LIPSTER PRO</span>
+                    </a>
+                    
+                    <button class="btn btn-secondary" id="tryAgainBtn" onclick="closeModal()">
+                        <span>Try Again</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="luck-info">
+            <div class="info-card">
+                <span class="info-icon">🎯</span>
+                <h3>How It Works</h3>
+                <p>Every user gets 3 free spins. Win LIPSTER PRO download link if you're one of the 10 lucky winners!</p>
+            </div>
+            <div class="info-card">
+                <span class="info-icon">🔒</span>
+                <h3>One Chance Only</h3>
+                <p>3 spins total. Refresh won't reset. No cheating. Play fair and good luck!</p>
+            </div>
+            <div class="info-card">
+                <span class="info-icon">🏆</span>
+                <h3>Only 10 Winners</h3>
+                <p>Out of 1000 users, only 10 will win. Counter shows remaining spots. Don't miss out!</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">LIPSTER</span>
+                <p>Premium PC Optimizer</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="index.html#support">Support</a>
+            </div>
+            <div class="footer-copy">
+                <p>© 2026 LIPSTER. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/luck.js"></script>
+</body>
+</html>
